@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@1.5.0/dist/flowbite.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+<!-- Navbar -->
+<nav class="bg-blue-600 p-4">
+    <div class="container mx-auto">
+        <div class="flex items-center justify-between">
+            <a href="#" class="text-white text-xl font-semibold">Mi Aplicación</a>
+            <ul class="flex space-x-4">
+                <li><a href="#" class="text-white">Inicio</a></li>
+                <li><a href="#" class="text-white">Sobre Nosotros</a></li>
+                <li><a href="#" class="text-white">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Formulario -->
+<div class="container mx-auto mt-8">
+    <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold mb-4 text-center">Registro de usuario</h2>
+        <form action="/veterinarios" method="post">
+            <label for="nombreVet">Nombre:</label>
+            <input type="text" id="nombreVet" name="nombre" required>
+
+            <label for="especialidad">Especialidad:</label>
+            <input type="text" id="especialidad" name="especialidad" required>
+
+            <label for="telefonoVet">Teléfono:</label>
+            <input type="text" id="telefonoVet" name="telefono" required>
+
+            <button type="submit">Registrar Veterinario</button>
+        </form>
+    </div>
+</div>
+
+<!-- Flowbite JS -->
+<script src="https://cdn.jsdelivr.net/npm/flowbite@1.5.0/dist/flowbite.min.js"></script>
+</body>
+</html>

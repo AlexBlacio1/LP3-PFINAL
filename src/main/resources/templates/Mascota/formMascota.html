@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+</head>
+<body class="bg-gray-100">
+
+
+<nav class="bg-white border-b border-gray-200 shadow-sm p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <a th:href="@{/}" class="text-2xl font-bold text-blue-600">Veterinaria</a>
+        <ul class="flex space-x-4">
+            <li><a th:href="@{/admin/dashboard}" class="text-gray-700 hover:text-blue-500">Administrador</a></li>
+            <li><a th:href="@{/servicios}" class="text-gray-700 hover:text-blue-500">Servicios</a></li>
+            <li><a th:href="@{/formUsuario}" class="text-gray-700 hover:text-blue-500">Registrate</a></li>
+            <li><a th:href="@{/login}" class="text-gray-700 hover:text-blue-500">Iniciar Sesión</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="flex justify-center items-center min-h-screen p-6">
+    <div class="w-full max-w-lg bg-white shadow-xl rounded-lg p-8">
+
+        <h2 class="text-3xl font-bold text-center text-indigo-600 mb-6">¡Inicio de sesión exitoso! <span class="text-green-500">🎉</span></h2>
+
+
+        <p class="text-center text-gray-700 text-lg">¡Bienvenido a la plataforma de la veterinaria! Ya puedes acceder a tus servicios y gestionar tus datos.</p>
+
+
+        <div class="mt-8 flex justify-center">
+            <a href="@{/}" class="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors">
+                Regresar a la página principal
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

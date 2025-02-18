@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuarios</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.1/dist/flowbite.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-5">
+<div class="overflow-x-auto">
+  <nav class="bg-white border-b border-gray-200 shadow-sm p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a th:href="@{/}" class="text-2xl font-bold text-blue-600">Veterinaria</a>
+      <ul class="flex space-x-4">
+        <li><a th:href="@{/admin/dashboard}" class="text-gray-700 hover:text-blue-500">Administrador</a></li>
+        <li><a th:href="@{/servicios}" class="text-gray-700 hover:text-blue-500">Servicios</a></li>
+        <li><a th:href="@{/formUsuario}" class="text-gray-700 hover:text-blue-500">Registrate</a></li>
+        <li><a th:href="@{/login}" class="text-gray-700 hover:text-blue-500">Iniciar Sesión</a></li>
+      </ul>
+    </div>
+  </nav>
+  <form th:action="@{/listar}" method="get">
+    <div>
+<div class="container mx-auto">
+  <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">historial Medico</h2>
+
+  <div class="overflow-x-auto">
+    <table class="w-full text-sm text-left text-gray-500 border border-gray-300 rounded-lg shadow-md">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-200">
+      <tr>
+        <th scope="col" class="px-6 py-3 border-b">ID</th>
+        <th scope="col" class="px-6 py-3 border-b">Descripcion</th>
+        <th scope="col" class="px-6 py-3 border-b">Fecha de registro</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="historialMedico : ${historialMedico}" class="border">
+        <td class="px-6 py-4" th:text="${historialMedico.idHistorial}"></td>
+        <td class="px-6 py-4" th:text="${historialMedico.descripcion}"></td>
+        <td class="px-6 py-4" th:text="${historialMedico.fechaRegistro}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="mt-4 flex justify-center">
+    <a th:href="@{/mascotas}" class="bg-blue-500 text-white px-5 py-3 rounded-lg shadow-md hover:bg-blue-600 transition">
+      Ver Mascotas
+    </a>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.1/dist/flowbite.min.js"></script>
+</body>
+</html>
+
+

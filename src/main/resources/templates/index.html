@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http/www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria | Inicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.0/flowbite.min.css" />
+</head>
+<body class="bg-gray-100">
+
+<!-- Navbar -->
+<nav class="bg-white border-b border-gray-200 shadow-sm p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <a th:href="@{/}" class="text-2xl font-bold text-blue-600">Veterinaria</a>
+        <ul class="flex space-x-4">
+            <li><a th:href="@{/admin/dashboard}" class="text-gray-700 hover:text-blue-500">Administrador</a></li>
+            <li><a th:href="@{/servicios}" class="text-gray-700 hover:text-blue-500">Servicios</a></li>
+            <li><a th:href="@{/formUsuario}" class="text-gray-700 hover:text-blue-500">Registrate</a></li>
+            <li><a th:href="@{/login}" class="text-gray-700 hover:text-blue-500">Iniciar Sesión</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="relative bg-blue-500 text-white text-center py-20"
+         th:style="'background-image: url(' + @{/imagenes/veterinaria.jpeg} + '); background-size: cover; background-position: center;'">
+    <h1 class="text-4xl font-bold">Cuidamos a tu mascota como familia</h1>
+    <p class="mt-4">Agenda una cita con nuestros especialistas</p>
+</section>
+
+<!-- Servicios -->
+<section id="services" class="container mx-auto py-16">
+    <h2 class="text-3xl font-bold text-center mb-8">Nuestros Servicios</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold">Consultas Médicas</h3>
+            <p class="mt-2">Atención especializada para tu mascota.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold">Vacunación</h3>
+            <p class="mt-2">Protege a tu mascota con nuestras vacunas.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold">Peluquería Canina</h3>
+            <p class="mt-2">Mantén a tu mascota limpia y saludable.</p>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-gray-900 text-white text-center p-4">
+    <p>&copy; 2025 Veterinaria. Todos los derechos reservados.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.0/flowbite.min.js"></script>
+</body>
+</html>

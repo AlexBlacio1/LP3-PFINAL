@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuarios</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.1/dist/flowbite.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-5">
+<div class="overflow-x-auto">
+  <nav class="bg-white border-b border-gray-200 shadow-sm p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a th:href="@{/}" class="text-2xl font-bold text-blue-600">Veterinaria</a>
+      <ul class="flex space-x-4">
+        <li><a th:href="@{/admin/dashboard}" class="text-gray-700 hover:text-blue-500">Administrador</a></li>
+        <li><a th:href="@{/servicios}" class="text-gray-700 hover:text-blue-500">Servicios</a></li>
+        <li><a th:href="@{/formUsuario}" class="text-gray-700 hover:text-blue-500">Registrate</a></li>
+        <li><a th:href="@{/login}" class="text-gray-700 hover:text-blue-500">Iniciar Sesión</a></li>
+      </ul>
+    </div>
+  </nav>
+  <form th:action="@{/listar}" method="get">
+    <div>
+<div class="container mx-auto">
+  <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Lista de Mascotas</h2>
+
+  <div class="overflow-x-auto">
+    <table class="w-full text-sm text-left text-gray-500 border border-gray-300 rounded-lg shadow-md">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-200">
+      <tr>
+        <th scope="col" class="px-6 py-3 border-b">ID</th>
+        <th scope="col" class="px-6 py-3 border-b">Nombre</th>
+        <th scope="col" class="px-6 py-3 border-b">Especie</th>
+        <th scope="col" class="px-6 py-3 border-b">Raza</th>
+        <th scope="col" class="px-6 py-3 border-b">Edad</th>
+        <th scope="col" class="px-6 py-3 border-b text-center">Acciones</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="mascota : ${mascotas}" class="border">
+        <td class="px-6 py-4" th:text="${mascota.idMascota}"></td>
+        <td class="px-6 py-4" th:text="${mascota.nombre}"></td>
+        <td class="px-6 py-4" th:text="${mascota.especie}"></td>
+        <td class="px-6 py-4" th:text="${mascota.raza}"></td>
+        <td class="px-6 py-4" th:text="${mascota.edad}"></td>
+        <td class="px-6 py-4 flex justify-center space-x-2">
+          <a th:href="@{/mascotas/editar/{id}(id=${mascota.idMascota})}" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">Actualizar</a>
+          <a th:href="@{/mascotas/eliminar/{id}(id=${mascota.idMascota})}" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition" onclick="return confirm('¿Seguro que deseas eliminar este usuario?')">Eliminar</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-4 flex justify-center">
+    <a th:href="@{/newMascota}" class="bg-blue-500 text-white px-5 py-3 rounded-lg shadow-md hover:bg-blue-600 transition">
+      Nueva Mascota
+    </a>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.1/dist/flowbite.min.js"></script>
+</body>
+</html>
+
+
